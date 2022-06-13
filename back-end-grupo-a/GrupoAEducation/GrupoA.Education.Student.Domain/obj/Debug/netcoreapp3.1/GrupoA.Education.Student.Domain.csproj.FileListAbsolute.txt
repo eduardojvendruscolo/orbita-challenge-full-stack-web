@@ -1,0 +1,13 @@
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.deps.json
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.runtimeconfig.json
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.runtimeconfig.dev.json
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.dll
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.pdb
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.csprojAssemblyReference.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.AssemblyInfoInputs.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.AssemblyInfo.cs
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.csproj.CoreCompileInputs.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.dll
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.pdb
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Domain/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Domain.genruntimeconfig.cache

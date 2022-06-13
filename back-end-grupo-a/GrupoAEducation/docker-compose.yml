@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  pg.academic:
+    image: postgres:14.2-alpine
+    ports:
+      - 15432:5432
+    environment:
+      POSTGRES_USER: grupoa
+      POSTGRES_PASSWORD: 0b979a178905
+    volumes:
+      - pg.education.data:/var/lib/postgresql/data
+
+volumes:
+  pg.education.data:

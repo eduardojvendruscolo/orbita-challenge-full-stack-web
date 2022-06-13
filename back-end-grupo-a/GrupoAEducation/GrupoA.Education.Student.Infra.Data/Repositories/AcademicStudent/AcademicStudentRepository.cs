@@ -1,0 +1,69 @@
+using System.Linq;
+using GrupoA.Education.Student.Domain.Student.Interfaces;
+using GrupoA.Education.Student.Infra.Data.Context;
+using GrupoA.Education.Student.Infra.Data.Repositories.Generic;
+using Microsoft.EntityFrameworkCore;
+
+namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
+{
+    public class AcademicStudentRepository: Repository<Domain.Student.Entities.Student, EducationDbContext>, IStudentRepository
+    {
+        public AcademicStudentRepository(EducationDbContext context) : base(context)
+        {
+        }
+
+        public IQueryable<Domain.Student.Entities.Student> GetAll(string filter, string orderByField, string orderType = "asc")
+        {
+            var studentGetAllQuery = _context.Students.AsNoTracking();
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                studentGetAllQuery = studentGetAllQuery.Where(student => student.Name.ToLower().Contains(filter.ToLower()));
+                studentGetAllQuery = studentGetAllQuery.Where(student => student.Itin.ToLower().Contains(filter.ToLower()));
+                studentGetAllQuery = studentGetAllQuery.Where(student => student.Mail.ToLower().Contains(filter.ToLower()));
+                studentGetAllQuery = studentGetAllQuery.Where(student => student.Ra.ToString().Contains(filter.ToLower()));
+            }
+            
+            if (!string.IsNullOrEmpty(orderByField))
+            {
+                switch (orderByField)
+                {
+                    case "name":
+                    {
+                        if (orderType == "asc")
+                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Name);
+                        else
+                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Name);
+                    } break;
+                    
+                    case "itin":
+                    {
+                        if (orderType == "asc")
+                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Itin);
+                        else
+                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Itin);
+                    } break;   
+                    
+                    case "mail":
+                    {
+                        if (orderType == "asc")
+                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Mail);
+                        else
+                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Mail);
+                    } break;       
+                    
+                    case "ra":
+                    {
+                        if (orderType == "asc")
+                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Ra);
+                        else
+                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Ra);
+                    } break;                      
+                                
+                }
+            }
+
+            return studentGetAllQuery;
+        }
+    }
+}

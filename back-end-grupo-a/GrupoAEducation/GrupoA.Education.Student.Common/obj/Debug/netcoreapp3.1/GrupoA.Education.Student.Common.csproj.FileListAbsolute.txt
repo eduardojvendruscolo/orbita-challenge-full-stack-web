@@ -1,0 +1,15 @@
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Common
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.deps.json
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.runtimeconfig.json
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.runtimeconfig.dev.json
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.dll
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.pdb
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.csprojAssemblyReference.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.AssemblyInfoInputs.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.AssemblyInfo.cs
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.csproj.CoreCompileInputs.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.dll
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.pdb
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.genruntimeconfig.cache
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/bin/Debug/netcoreapp3.1/FluentValidation.dll
+/home/eduardo/RiderProjects/GrupoAEduardo/back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.csproj.CopyComplete
