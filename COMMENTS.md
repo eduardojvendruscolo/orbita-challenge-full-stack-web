@@ -24,4 +24,4 @@ Utilizado o Swagger como documentação da API, para auxílio no processode dese
 - Em AcademicStudentService existem os métodos AcademicStudenAlreadyExists e AnotherStudenAlreadyExists, melhorar fazendo um predicado dinamico, para poder usar só uma função ao invés de duas, pois a única coisa que muda é o parametro da primary key.
 
 **Quais requisitos obrigatórios que não foram entregues**
-- Nem um
+- Teste unitários
