@@ -10,6 +10,10 @@ Utilizado o Swagger como documentação da API, para auxílio no processode dese
 
 ![Swagger](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/swaggerEducationExample.png)
 
+Utilizado o Postman para fazer requisições Rest no backend, pois ele oferece diversas opções para automação de requisições também geração de massa de dados para testes, e variáveis padrões dele para ajuda nos cadastros.
+
+![Postman](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/postmanEducation.png)
+
 **Lista de bibliotecas de terceiros utilizadas**
 
 - Swashbuckle
