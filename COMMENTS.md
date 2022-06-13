@@ -6,6 +6,10 @@ Projeto desenvolvido utilizando as tecnologias solicitadas netCore, C# e Entity 
 
 Caso necesário, para uma alta cargad e requisição e leituras, um ElasticSearch ou MongoDb para o banco de leitura, também como seria feito o deploy deste projeto, com container Docker com disponibilidade 24/7 e zero de downtime em caso de uma atualização, para este caso, talvez utilizar Kubernetes em EKS ou Amazon ECS.
 
+Utilizado o Swagger como documentação da API, para auxílio no processode desenvolvimento, teste e talvez ajuda em uma abordadem de desenvolvimento não full stack.
+
+![Swagger](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/swaggerEducationExample.png)
+
 **Lista de bibliotecas de terceiros utilizadas**
 
 - Swashbuckle
