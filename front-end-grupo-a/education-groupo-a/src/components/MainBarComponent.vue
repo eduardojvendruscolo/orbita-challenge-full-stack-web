@@ -53,10 +53,7 @@
 
             </template>                
 
-
-
         </v-simple-table>    
-
 
         <v-pagination
             :length="totalPages"
@@ -65,7 +62,7 @@
             circle                 
         ></v-pagination>
 
-        <router-link :to="{name: 'Edit', params: {id: '4c9bdc8d-94ac-4c85-9d1d-873245e3042f'}}" style="text-decoration: none; color: inherit;">
+        <router-link :to="{name: 'Insert', params: {}}" style="text-decoration: none; color: inherit;">
               <v-btn
                     class="mx-2"
                     fab
