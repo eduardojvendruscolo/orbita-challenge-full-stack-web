@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MainBarComponent from '../components/MainBarComponent.vue'
-import Edit from '../views/EditStudent.vue'
+import EditStudentView from '../views/EditStudent.vue'
 
 console.log('MainBarComponent', MainBarComponent)
 
@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/edit/:id',
     name: 'Edit',
-    component: Edit
+    component: EditStudentView
   }
 ]
 

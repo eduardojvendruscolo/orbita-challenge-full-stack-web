@@ -20,9 +20,12 @@
                         <td>{{student.ra}}</td>
                         <td>{{student.name}}</td>
                         <td>{{student.mail}}</td>
-                        <td><the-mask :mask="['###.###.###-##']" :value="student.itin"></the-mask> </td>
+                        <td> <the-mask :mask="['###.###.###-##']" :value="student.itin"></the-mask> </td>
                         <td>
-                            <router-link :to="{name: 'Edit', params: {id: student.primaryKey}}"><v-btn color="warning" small>Edit</v-btn></router-link> 
+                            <router-link :to="{name: 'Edit', params: {id: student.primaryKey}}" 
+                                          style="text-decoration: none; color: inherit;margin-right: 15px">
+                                <v-btn color="warning" small>Edit</v-btn>
+                            </router-link> 
                             
                             <v-dialog v-model="dialog" max-width="290" :retain-focus="false">
                                 <template v-slot:activator="{ on, attrs }">
@@ -49,7 +52,11 @@
                 </tbody>
 
             </template>                
+
+
+
         </v-simple-table>    
+
 
         <v-pagination
             :length="totalPages"
@@ -57,6 +64,17 @@
             @input="nextPage"   
             circle                 
         ></v-pagination>
+
+        <router-link :to="{name: 'Edit', params: {id: '4c9bdc8d-94ac-4c85-9d1d-873245e3042f'}}" style="text-decoration: none; color: inherit;">
+              <v-btn
+                    class="mx-2"
+                    fab
+                    dark
+                    color="indigo">
+            <v-icon dark> mdi-plus</v-icon>
+             </v-btn>  
+        </router-link>
+
 
     </v-container>
 </template>
@@ -109,7 +127,7 @@ export default {
             this.getStudents(page);
         },
         getStudents(page){
-            axios.get('https://localhost:30931/api/v1/students?pageSize=15&pageOffset='+page)
+            axios.get('https://localhost:30931/api/v1/students?pageSize=10&pageOffset='+page)
                     .then((res) => {
                             this.students = res.data.records;
                             this.totalPages = res.data.totalPages;
