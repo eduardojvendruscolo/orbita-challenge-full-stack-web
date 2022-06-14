@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+*csprojAssemblyReference.cache*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -102,3 +103,9 @@ dist
 
 # TernJS port file
 .tern-port
+back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.ApiV1/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.ApiV1.csprojAssemblyReference.cache
+back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.ApiV1/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.ApiV1.csprojAssemblyReference.cache
+back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Application/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Application.csprojAssemblyReference.cache
+back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Common/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Common.csprojAssemblyReference.cache
+back-end-grupo-a/GrupoAEducation/GrupoA.Education.Student.Infra.Data/obj/Debug/netcoreapp3.1/GrupoA.Education.Student.Infra.Data.csprojAssemblyReference.cache
+back-end-grupo-a/GrupoAEducation/GrupoAEducation/obj/Debug/netcoreapp3.1/GrupoAEducation.csprojAssemblyReference.cache
