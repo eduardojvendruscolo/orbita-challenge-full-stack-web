@@ -55,7 +55,7 @@ namespace GrupoA.Education.Student.Api.Controllers
             [FromQuery(Name = "filter")] string filter, 
             [FromQuery(Name = "pageSize")] int pageSize = 20, 
             [FromQuery(Name = "pageOffset")] int pageOffset = 1,
-            [FromQuery(Name = "orderByField")] string orderByField = "PrimaryKey",
+            [FromQuery(Name = "orderByField")] string orderByField = "name",
             [FromQuery(Name = "orderType")] string orderType = "asc")
             => Ok(await mediator.Send(new GetAcademicStudentListQuery(filter, pageSize, pageOffset, orderByField, orderType)));        
 
