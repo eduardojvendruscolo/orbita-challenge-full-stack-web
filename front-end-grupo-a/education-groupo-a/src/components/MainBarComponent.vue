@@ -26,7 +26,7 @@
                         <td>{{student.ra}}</td>
                         <td>{{student.name}}</td>
                         <td>{{student.mail}}</td>
-                        <td>{{student.itin}}</td>
+                        <td><the-mask :mask="['###.###.###-##']" :value="student.itin"></the-mask> </td>
                         <td>
                         <!-- <router-link :to="{name: 'Edit', params: {id: student.ra}}"><v-btn color="warning" small>Edit</v-btn></router-link> -->
                             <v-dialog v-model="dialog" max-width="290" :retain-focus="false">
@@ -70,6 +70,7 @@
 <script>
 
 import axios from 'axios'
+
 
 export default {
 
