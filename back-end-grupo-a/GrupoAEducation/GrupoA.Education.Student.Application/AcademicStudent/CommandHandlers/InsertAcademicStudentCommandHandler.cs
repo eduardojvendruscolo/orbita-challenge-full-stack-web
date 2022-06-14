@@ -37,6 +37,7 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             if (_notificationContext.ExistsNotifications())
                 return new CommandResult<AcademicStudentViewModel>();
 
+            newAcademicStudent.Ra = _uow.Students.GetNextRaNumber();
             await _uow.Students.Add(newAcademicStudent);
             
             if (await _uow.Commit())

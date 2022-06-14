@@ -6,5 +6,6 @@ namespace GrupoA.Education.Student.Domain.Student.Interfaces
     public interface IStudentRepository : IRepository<Entities.Student>
     {
         IQueryable<Entities.Student> GetAll(string filter, string orderByField, string orderType);
+        int GetNextRaNumber();
     }
 }

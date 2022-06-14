@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using GrupoA.Education.Student.Domain.Student.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Context;
 using GrupoA.Education.Student.Infra.Data.Repositories.Generic;
@@ -15,7 +16,7 @@ namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
         public IQueryable<Domain.Student.Entities.Student> GetAll(string filter, string orderByField, string orderType = "asc")
         {
             var studentGetAllQuery = _context.Students.AsNoTracking();
-
+            
             if (!string.IsNullOrEmpty(filter))
             {
                 studentGetAllQuery = studentGetAllQuery.Where(student => student.Name.ToLower().Contains(filter.ToLower()));
@@ -64,6 +65,12 @@ namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
             }
 
             return studentGetAllQuery;
+        }
+
+        public int GetNextRaNumber()
+        {
+            var maxRaNumber = _context.Students.Max(s => s.Ra);
+            return ++maxRaNumber;
         }
     }
 }
