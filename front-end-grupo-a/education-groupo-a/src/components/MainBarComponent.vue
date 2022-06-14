@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+
     <v-container fluid>
         <v-app-bar elevation="4">
                 <v-app-bar-nav-icon>  </v-app-bar-nav-icon> 
@@ -30,6 +30,7 @@
                         <td><the-mask :mask="['###.###.###-##']" :value="student.itin"></the-mask> </td>
                         <td>
                             <router-link :to="{name: 'Edit', params: {id: student.primaryKey}}"><v-btn color="warning" small>Edit</v-btn></router-link> 
+                            
                             <v-dialog v-model="dialog" max-width="290" :retain-focus="false">
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-btn color="error" small v-bind="attrs" @click='saveRA(student.ra, student.name, student.primaryKey)' v-on="on">Delete</v-btn>
@@ -65,7 +66,6 @@
         ></v-pagination>
 
     </v-container>
-    </v-app>   
 </template>
 
 <script>

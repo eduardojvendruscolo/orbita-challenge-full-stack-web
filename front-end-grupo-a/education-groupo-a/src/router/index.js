@@ -1,17 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import MainBarComponent from '../components/MainBarComponent.vue'
+import Edit from '../views/EditStudent.vue'
 
+console.log('MainBarComponent', MainBarComponent)
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/',
+    name: 'home',
+    component: MainBarComponent
+  },
+  {
+    path: '/edit/:id',
+    name: 'Edit',
+    component: Edit
   }
 ]
 

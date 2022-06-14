@@ -1,16 +1,16 @@
 <template>
-  <MainBarComponent/>
+    <v-app >
+      <h1>...........app..........</h1>
+      <v-main>
+        <router-view/>
+      </v-main>
+    </v-app>
 </template>
 
 <script>
 
-import MainBarComponent from './components/MainBarComponent.vue'
-
 export default {
   name: 'App',
-  components: {
-    MainBarComponent
-  },
   data: () => ({
     //
   }),
