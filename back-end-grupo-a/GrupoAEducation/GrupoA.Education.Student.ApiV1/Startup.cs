@@ -29,11 +29,13 @@ namespace GrupoA.Education.Student.Api
             });
             
             services.AddDbContext<EducationDbContext>();
+            services.AddCors();
             services.AddFluentValidation();
             services.AddControllers();
             services.AddMediator();
             services.AddAutoMapper();
             services.AddEducationServices();
+            
             
             services.AddSwaggerGen(c =>
                 {
@@ -45,6 +47,13 @@ namespace GrupoA.Education.Student.Api
 
         public virtual void Configure(IApplicationBuilder app)
         {
+            
+            app.UseCors(option => {
+                option.AllowAnyOrigin();
+                option.AllowAnyMethod();
+                option.AllowAnyHeader();
+            });            
+            
             app.UseApiVersioning();
             app.UseDeveloperExceptionPage();
             app.UseHttpsRedirection();
@@ -55,6 +64,8 @@ namespace GrupoA.Education.Student.Api
                 endpoints.MapControllers();
             });
             app.UseEducationSwagger();
+            
+
 
         }
         
