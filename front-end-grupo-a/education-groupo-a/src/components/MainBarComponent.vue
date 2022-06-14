@@ -1,12 +1,5 @@
 <template>
-
     <v-container fluid>
-        <v-app-bar elevation="4">
-                <v-app-bar-nav-icon>  </v-app-bar-nav-icon> 
-                <!-- <v-img src="../assets/grupoa.jpeg" width="20px"></v-img> -->
-                <v-toolbar-title>Grupo A Educação</v-toolbar-title>
-        </v-app-bar>    
-
         <v-toolbar flat>
             <v-toolbar-title>Students</v-toolbar-title>
         </v-toolbar>
