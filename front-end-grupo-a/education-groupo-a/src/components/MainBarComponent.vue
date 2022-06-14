@@ -2,7 +2,8 @@
     <v-app>
     <v-container fluid>
         <v-app-bar elevation="4">
-                <v-app-bar-nav-icon>  </v-app-bar-nav-icon>
+                <v-app-bar-nav-icon>  </v-app-bar-nav-icon> 
+                <!-- <v-img src="../assets/grupoa.jpeg" width="20px"></v-img> -->
                 <v-toolbar-title>Grupo A Educação</v-toolbar-title>
         </v-app-bar>    
 
@@ -28,7 +29,7 @@
                         <td>{{student.mail}}</td>
                         <td><the-mask :mask="['###.###.###-##']" :value="student.itin"></the-mask> </td>
                         <td>
-                        <!-- <router-link :to="{name: 'Edit', params: {id: student.ra}}"><v-btn color="warning" small>Edit</v-btn></router-link> -->
+                            <router-link :to="{name: 'Edit', params: {id: student.primaryKey}}"><v-btn color="warning" small>Edit</v-btn></router-link> 
                             <v-dialog v-model="dialog" max-width="290" :retain-focus="false">
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-btn color="error" small v-bind="attrs" @click='saveRA(student.ra, student.name, student.primaryKey)' v-on="on">Delete</v-btn>
@@ -71,7 +72,6 @@
 
 import axios from 'axios'
 
-
 export default {
 
     name: "MainBarComponent",
@@ -86,7 +86,7 @@ export default {
                 { text: 'RA',value: 'ra' },
                 { text: 'Name', value: 'name' },
                 { text: 'Mail', value: 'mail' },
-                { text: 'CPF', value: 'itin' },
+                { text: 'Itin', value: 'itin' },
                 { text: 'actions', value: 'actions' }
             ],
             students:[],

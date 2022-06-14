@@ -8,7 +8,6 @@ Vue.use(VueTheMask)
 Vue.use(vuetify)
 Vue.use(Router)
 
-
 Vue.config.productionTip = false
 
 new Vue({
