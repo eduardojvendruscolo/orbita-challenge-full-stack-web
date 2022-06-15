@@ -12,6 +12,14 @@
             @keyup="getStudents(1)"
         ></v-text-field>
 
+        <v-select
+            :items="items"
+            label="Page size"
+            solo
+            v-model="pageSize"
+            @change="getStudents(1)"
+        ></v-select>
+
         <v-simple-table>
             <template v-slot:default>
                 <thead>
@@ -117,7 +125,9 @@ export default {
             tableHeaderIconRa: '',
             tableHeaderIconName: 'mdi-arrow-down-bold',
             tableHeaderIconMail: '',
-            tableHeaderIconItin: ''
+            tableHeaderIconItin: '',
+            items: [10, 20, 30, 50, 100],
+            pageSize: 10
         }
     },
     methods: {
@@ -139,7 +149,10 @@ export default {
             this.getStudents(page);
         },
         getStudents(page){
-            var url = 'https://localhost:30931/api/v1/students?pageSize=10&pageOffset='+page;
+            var url = 'https://localhost:30931/api/v1/students?pageOffset=' + page;
+
+            if (this.pageSize)
+                url += '&pageSize='+this.pageSize
 
             if (this.searchString)
                 url += '&filter='+this.searchString
