@@ -32,9 +32,9 @@ namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
                     case "name":
                     {
                         if (orderType == "asc")
-                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Name);
+                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Name.ToLower());
                         else
-                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Name);
+                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Name.ToLower());
                     } break;
                     
                     case "itin":
@@ -48,9 +48,9 @@ namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
                     case "mail":
                     {
                         if (orderType == "asc")
-                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Mail);
+                            studentGetAllQuery = studentGetAllQuery.OrderBy(s => s.Mail.ToLower());
                         else
-                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Mail);
+                            studentGetAllQuery = studentGetAllQuery.OrderByDescending(s => s.Mail.ToLower());
                     } break;       
                     
                     case "ra":

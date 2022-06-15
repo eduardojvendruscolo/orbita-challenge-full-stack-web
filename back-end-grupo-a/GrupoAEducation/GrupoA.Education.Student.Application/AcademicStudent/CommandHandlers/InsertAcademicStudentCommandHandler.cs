@@ -32,6 +32,9 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             var newAcademicStudent = _mapper.Map<Domain.Student.Entities.Student>(request);
             newAcademicStudent.Mail = newAcademicStudent.Mail.ToLower();
             
+            Regex onlyNumbersRegex = new Regex(@"(?i)[^0-9]");
+            newAcademicStudent.Itin = onlyNumbersRegex.Replace(newAcademicStudent.Itin, string.Empty);
+            
             await ValidateInsertNewAcademicStudent(request);
 
             if (_notificationContext.ExistsNotifications())
