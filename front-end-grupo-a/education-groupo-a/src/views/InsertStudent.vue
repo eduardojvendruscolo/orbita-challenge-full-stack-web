@@ -32,8 +32,8 @@ export default {
         return {
             ra: "",
             name: "",
-            email: "",
-            cpf: "",
+            mail: "",
+            itin: "",
             error: undefined,
             edited: undefined,
         }
@@ -50,8 +50,8 @@ export default {
                 this.edited = "User Inserted Successfully";
                 setTimeout(() =>{this.$router.push({name: "home"})}, 1000);
             }).catch(err => {
-                let errMsg = err.response.data;
-                this.error = `Error: ${errMsg}`;
+                let errorMessage = err.response.data.exceptions[0].message;
+                this.error = `Error: ${errorMessage}`;
             })
         }
     }
