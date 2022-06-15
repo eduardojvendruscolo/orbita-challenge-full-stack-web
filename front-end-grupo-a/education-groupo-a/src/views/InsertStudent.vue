@@ -12,10 +12,12 @@
             </v-toolbar>
             <v-text-field v-model="ra" label="RA" disabled hint='12334554' ></v-text-field>
             <v-text-field v-model="name" label="Student Name" clearable ></v-text-field>
-            <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com" ></v-text-field>
+            <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com"></v-text-field>
             <v-text-field v-model="itin" label="Student Itin" hint="000.000.000-00"></v-text-field><br>
-            <v-btn color='secondary' small @click="update">Save student</v-btn> |
-            <router-link :to="{name: 'home'}"><v-btn color="secondary" small>Cancel</v-btn></router-link>
+            <v-btn color='primary' small @click="update" style="text-decoration: none;">Save student</v-btn> 
+            <router-link :to="{name: 'home'}" style="text-decoration: none; margin-left: 10px">
+                <v-btn color="error" small>Cancel</v-btn>
+            </router-link>
         </v-container>
     </div>
 </template>

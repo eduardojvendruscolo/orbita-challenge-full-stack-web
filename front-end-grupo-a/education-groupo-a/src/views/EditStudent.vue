@@ -14,8 +14,10 @@
             <v-text-field v-model="name" label="Student Name" clearable ></v-text-field>
             <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com" ></v-text-field>
             <v-text-field v-model="itin" label="Student Itin" disabled hint="000.000.000-00"></v-text-field><br>
-            <v-btn color='secondary' small @click="update">Edit Student</v-btn> |
-            <router-link :to="{name: 'home'}"><v-btn color="secondary" small>Cancel</v-btn></router-link>
+            <v-btn color='primary' small @click="update">Edit Student</v-btn> 
+            <router-link :to="{name: 'home'}" style="text-decoration: none;margin-left: 10px">
+                <v-btn color="error" small>Cancel</v-btn>
+            </router-link>
         </v-container>
     </div>
 </template>
