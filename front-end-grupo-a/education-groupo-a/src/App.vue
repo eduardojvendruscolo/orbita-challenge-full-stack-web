@@ -5,9 +5,9 @@
           <v-img src="https://maisaedu.com.br/hubfs/site-grupo-a/logo-mais-a-educacao.svg" 
                  width="60px" transition="fade-transition"></v-img> 
         </v-app-bar-nav-icon> 
-        <v-toolbar-title>+A Educação</v-toolbar-title>
+        <v-toolbar-title>Grupo A+</v-toolbar-title>
       </v-toolbar> 
-      <v-main>
+      <v-main style="margin: 5px 30px">
         <router-view/>
       </v-main>
     </v-app>

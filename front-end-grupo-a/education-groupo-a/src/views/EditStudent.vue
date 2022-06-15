@@ -7,16 +7,16 @@
             <div v-if="error != undefined">
                 <v-alert dense type="error">{{error}}</v-alert>
             </div>
-            <v-toolbar flat>
+            <v-toolbar flat class="toolbar-list">
                 <v-toolbar-title>Student {{name}} edit</v-toolbar-title>
             </v-toolbar>
             <v-text-field v-model="ra" label="RA" disabled hint='12334554' ></v-text-field>
             <v-text-field v-model="name" label="Student Name" clearable ></v-text-field>
             <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com" ></v-text-field>
             <v-text-field v-model="itin" label="Student Itin" disabled hint="000.000.000-00"></v-text-field><br>
-            <v-btn color='primary' small @click="update">Edit Student</v-btn> 
+            <v-btn color='primary' small @click="update" elevation="0">edit</v-btn> 
             <router-link :to="{name: 'home'}" style="text-decoration: none;margin-left: 10px">
-                <v-btn color="error" small>Cancel</v-btn>
+                <v-btn color="error" small elevation="0">Cancel</v-btn>
             </router-link>
         </v-container>
     </div>
@@ -68,3 +68,9 @@ export default {
     }
 }
 </script>
+
+<style>
+    .toolbar-list .v-toolbar__content {
+        padding: 2px 0px;
+    }
+</style>

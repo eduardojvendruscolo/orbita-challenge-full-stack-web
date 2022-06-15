@@ -1,7 +1,9 @@
 <template>
     <v-container fluid>
 
-        <h4>Students</h4>
+        <v-toolbar flat class="toolbar-list">
+            <v-toolbar-title>Students</v-toolbar-title>
+        </v-toolbar>
 
         <v-row>
             <v-col md="11">
@@ -44,12 +46,14 @@
                         <td>
                             <router-link :to="{name: 'Edit', params: {id: student.primaryKey}}" 
                                           style="text-decoration: none; color: inherit;margin-right: 15px">
-                                <v-btn color="warning" small>Edit</v-btn>
+                                <v-btn color="warning" small elevation="0">Edit</v-btn>
                             </router-link> 
                             
                             <v-dialog v-model="dialog" max-width="290" :retain-focus="false">
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-btn color="error" small v-bind="attrs" @click='saveRA(student.ra, student.name, student.primaryKey)' v-on="on">Delete</v-btn>
+                                    <v-btn color="error" small v-bind="attrs" 
+                                           @click='saveRA(student.ra, student.name, student.primaryKey)' v-on="on"
+                                           elevation="0">Delete</v-btn>
                                 </template>
                                 <v-card >
                                     <v-card-title class="text-h5">
@@ -79,7 +83,8 @@
             :length="totalPages"
             v-model="page"
             @input="nextPage"   
-            circle                 
+            circle      
+            style="margin-top: 30px"           
         ></v-pagination>
 
         <router-link :to="{name: 'Insert', params: {}}" style="text-decoration: none; color: inherit;">
@@ -125,10 +130,10 @@ export default {
             totalPages: null,
             page: null,
             searchString: null,
-            fieldOrderName: null,
+            fieldOrderName: 'name',
             fieldOrderType: "asc",
             tableHeaderIconRa: '',
-            tableHeaderIconName: 'mdi-arrow-down-bold',
+            tableHeaderIconName: 'mdi-chevron-down',
             tableHeaderIconMail: '',
             tableHeaderIconItin: '',
             items: [5, 10, 20, 50, 100],
@@ -192,8 +197,8 @@ export default {
             this.tableHeaderIconMail = ''
             this.tableHeaderIconItin = ''
 
-            let arrowDownIcon = 'mdi-arrow-down-bold';
-            let arrowUpIcon = 'mdi-arrow-up-bold';
+            let arrowDownIcon = 'mdi-chevron-up';
+            let arrowUpIcon = 'mdi-chevron-down';
 
             switch (fieldOrderName) {
                 case "ra":
@@ -220,11 +225,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     .plusButton {
         position: fixed;
         bottom: 0;
         margin-bottom: 3em; 
-        margin-left: 94%;       
+        margin-left: 92.5%;       
+    }
+
+
+    .toolbar-list .v-toolbar__content {
+        padding: 2px 0px;
     }
 </style>
