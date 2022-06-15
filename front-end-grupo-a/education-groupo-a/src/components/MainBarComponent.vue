@@ -6,7 +6,7 @@
         </v-toolbar>
 
         <v-row>
-            <v-col md="11">
+            <v-col md="10">
                 <v-text-field 
                     label="Type your search"
                     outlined
@@ -15,7 +15,7 @@
                 ></v-text-field>
             
             </v-col>
-            <v-col md="1">
+            <v-col md="2">
                 <v-select
                     :items="items"
                     label="Page size"
@@ -90,6 +90,7 @@
         <router-link :to="{name: 'Insert', params: {}}" style="text-decoration: none; color: inherit;">
               <v-btn 
                     class="plusButton"
+                    elevation="0"
                     fab
                     dark
                     large
@@ -233,6 +234,10 @@ export default {
         margin-left: 92.5%;       
     }
 
+    .plusButton:hover {
+        transform: rotate(90deg);
+        transition: transform .2s ease-in-out;
+    }
 
     .toolbar-list .v-toolbar__content {
         padding: 2px 0px;

@@ -8,7 +8,7 @@
                 <v-alert dense type="error">{{error}}</v-alert>
             </div>
             <v-toolbar flat class="toolbar-list">
-                <v-toolbar-title>Student {{name}} edit</v-toolbar-title>
+                <v-toolbar-title>Student RA {{ra}} edit</v-toolbar-title>
             </v-toolbar>
             <v-text-field v-model="ra" label="RA" disabled hint='12334554' ></v-text-field>
             <v-text-field v-model="name" label="Student Name" clearable ></v-text-field>
