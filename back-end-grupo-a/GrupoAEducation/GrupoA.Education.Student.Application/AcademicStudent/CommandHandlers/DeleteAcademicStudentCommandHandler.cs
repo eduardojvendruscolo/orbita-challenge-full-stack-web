@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using GrupoA.Education.Student.Application.AcademicStudent.Command;
 using GrupoA.Education.Student.Application.AcademicStudent.generic;
+using GrupoA.Education.Student.Application.Resources;
 using GrupoA.Education.Student.Common.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Uow;
 using MediatR;
@@ -27,8 +28,8 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             if (student == null)
             {
                 _notificationContext.NotFound(
-                    nameof(Messages.Messages.StudentNotFound), 
-                        string.Format(Messages.Messages.StudentNotFound, request.PrimaryKey.ToString()));
+                    nameof(Messages.StudentNotFound), 
+                        string.Format(Messages.StudentNotFound, request.PrimaryKey.ToString()));
                 return new CommandResult<bool>();
             }
 
@@ -38,8 +39,8 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
                 return new CommandResult<bool>(true, true);
 
             _notificationContext.BadRequest(
-                nameof(Messages.Messages.UnexpectedErrorOn), 
-                string.Format(Messages.Messages.UnexpectedErrorOn, "remove student"));
+                nameof(Messages.UnexpectedErrorOn), 
+                string.Format(Messages.UnexpectedErrorOn, "remove student"));
             return new CommandResult<bool>();            
             
         }

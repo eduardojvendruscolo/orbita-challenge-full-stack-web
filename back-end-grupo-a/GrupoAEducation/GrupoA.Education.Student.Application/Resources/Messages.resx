@@ -3,7 +3,7 @@
 <root>
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <xsd:element name="root" msdata:IsDataSet="true">
-            
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -41,5 +41,18 @@
     </data>
     <data name="CpfIsNotValid" xml:space="preserve">
         <value>CPF {0} is not valid</value>
-    </data>    
+    </data>
+    <data name="MailIsMandatory" xml:space="preserve">
+        <value>Student mail is mandatory</value>
+    </data>
+    <data name="MailIsNotValid" xml:space="preserve">
+        <value>Mail {0} is not valid</value>
+    </data>
+    <data name="StudentNameIsMandatory" xml:space="preserve">
+        <value>Student name is mandatory</value>
+    </data>
+    <data name="StudentNameIsTooShort" xml:space="preserve">
+        <value>Student name {0} is too short</value>
+    </data>
+
 </root>

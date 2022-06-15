@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GrupoA.Education.Student.Application.Messages {
+namespace GrupoA.Education.Student.Application.Resources {
     using System;
     
     
@@ -90,6 +90,30 @@ namespace GrupoA.Education.Student.Application.Messages {
         internal static string CpfIsNotValid {
             get {
                 return ResourceManager.GetString("CpfIsNotValid", resourceCulture);
+            }
+        }
+        
+        internal static string MailIsMandatory {
+            get {
+                return ResourceManager.GetString("MailIsMandatory", resourceCulture);
+            }
+        }
+        
+        internal static string MailIsNotValid {
+            get {
+                return ResourceManager.GetString("MailIsNotValid", resourceCulture);
+            }
+        }
+        
+        internal static string StudentNameIsMandatory {
+            get {
+                return ResourceManager.GetString("StudentNameIsMandatory", resourceCulture);
+            }
+        }
+        
+        internal static string StudentNameIsTooShort {
+            get {
+                return ResourceManager.GetString("StudentNameIsTooShort", resourceCulture);
             }
         }
     }

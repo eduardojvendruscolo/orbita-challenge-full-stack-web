@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using GrupoA.Education.Student.Application.Resources;
 using GrupoA.Education.Student.Common.Interfaces;
 using GrupoA.Education.Student.Domain.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Uow;
@@ -22,22 +23,22 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.Services
             var academicStudent = await _uow.Students.FirstOrDefaultAsync(p => p.Ra.Equals(ra));
             if (academicStudent != null)
             {
-                _notificationContext.BadRequest(nameof(Messages.Messages.StudentWithRaAlreadyExists), 
-                    String.Format(Messages.Messages.StudentWithRaAlreadyExists, academicStudent.Name, ra)); 
+                _notificationContext.BadRequest(nameof(Messages.StudentWithRaAlreadyExists), 
+                    String.Format(Messages.StudentWithRaAlreadyExists, academicStudent.Name, ra)); 
             }
             
             academicStudent = await _uow.Students.FirstOrDefaultAsync(p => p.Itin.Equals(itin));
             if (academicStudent != null)
             {
-                _notificationContext.BadRequest(nameof(Messages.Messages.StudentWithItinAlreadyExists), 
-                    String.Format(Messages.Messages.StudentWithItinAlreadyExists, academicStudent.Name, itin)); 
+                _notificationContext.BadRequest(nameof(Messages.StudentWithItinAlreadyExists), 
+                    String.Format(Messages.StudentWithItinAlreadyExists, academicStudent.Name, itin)); 
             }            
                
             academicStudent = await _uow.Students.FirstOrDefaultAsync(p => p.Mail.Equals(mail));
             if (academicStudent != null)
             {
-                _notificationContext.BadRequest(nameof(Messages.Messages.StudentWithMailAlreadyExists), 
-                    String.Format(Messages.Messages.StudentWithMailAlreadyExists, academicStudent.Name, mail)); 
+                _notificationContext.BadRequest(nameof(Messages.StudentWithMailAlreadyExists), 
+                    String.Format(Messages.StudentWithMailAlreadyExists, academicStudent.Name, mail)); 
             }
         }
 
@@ -46,22 +47,22 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.Services
             var academicStudent = await _uow.Students.FirstOrDefaultAsync(p => p.Ra.Equals(ra) && p.PrimaryKey != primaryKey);
             if (academicStudent != null)
             {
-                _notificationContext.BadRequest(nameof(Messages.Messages.StudentWithRaAlreadyExists), 
-                    String.Format(Messages.Messages.StudentWithRaAlreadyExists, academicStudent.Name, ra)); 
+                _notificationContext.BadRequest(nameof(Messages.StudentWithRaAlreadyExists), 
+                    String.Format(Messages.StudentWithRaAlreadyExists, academicStudent.Name, ra)); 
             }
             
             academicStudent = await _uow.Students.FirstOrDefaultAsync(p => p.Itin.Equals(itin) && p.PrimaryKey != primaryKey);
             if (academicStudent != null)
             {
-                _notificationContext.BadRequest(nameof(Messages.Messages.StudentWithItinAlreadyExists), 
-                    String.Format(Messages.Messages.StudentWithItinAlreadyExists, academicStudent.Name, itin)); 
+                _notificationContext.BadRequest(nameof(Messages.StudentWithItinAlreadyExists), 
+                    String.Format(Messages.StudentWithItinAlreadyExists, academicStudent.Name, itin)); 
             }            
                
             academicStudent = await _uow.Students.FirstOrDefaultAsync(p => p.Mail.Equals(mail) && p.PrimaryKey != primaryKey);
             if (academicStudent != null)
             {
-                _notificationContext.BadRequest(nameof(Messages.Messages.StudentWithMailAlreadyExists), 
-                    String.Format(Messages.Messages.StudentWithMailAlreadyExists, academicStudent.Name, mail)); 
+                _notificationContext.BadRequest(nameof(Messages.StudentWithMailAlreadyExists), 
+                    String.Format(Messages.StudentWithMailAlreadyExists, academicStudent.Name, mail)); 
             }
         }
         

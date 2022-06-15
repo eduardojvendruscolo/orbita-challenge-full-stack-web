@@ -5,6 +5,7 @@ using AutoMapper;
 using GrupoA.Education.Student.Application.AcademicStudent.Command;
 using GrupoA.Education.Student.Application.AcademicStudent.generic;
 using GrupoA.Education.Student.Application.AcademicStudent.ViewModels;
+using GrupoA.Education.Student.Application.Resources;
 using GrupoA.Education.Student.Common.Interfaces;
 using GrupoA.Education.Student.Domain.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Uow;
@@ -46,8 +47,8 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             if (await _uow.Commit())
                 return new CommandResult<AcademicStudentViewModel>(true, _mapper.Map<AcademicStudentViewModel>(newAcademicStudent));            
             
-            _notificationContext.BadRequest(nameof(Messages.Messages.ErrorOnCommit), 
-                string.Format(Messages.Messages.ErrorOnCommit, "new student"));
+            _notificationContext.BadRequest(nameof(Messages.ErrorOnCommit), 
+                string.Format(Messages.ErrorOnCommit, "new student"));
             return new CommandResult<AcademicStudentViewModel>();
         }
 
@@ -55,12 +56,28 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
         {
             await _academicStudentService.AcademicStudenAlreadyExists(request.Ra, request.Itin, request.Mail);
             
+            if (request.Name == "")
+                _notificationContext.BadRequest(nameof(Messages.StudentNameIsMandatory), Messages.StudentNameIsMandatory);
+            else if (request.Name.Length <= 1)
+                _notificationContext.BadRequest(nameof(Messages.StudentNameIsTooShort), string.Format(Messages.StudentNameIsTooShort, request.Name));            
+            
             Regex onlyNumbersRegex = new Regex(@"(?i)[^0-9]");
             var onlyNumbersItin = onlyNumbersRegex.Replace(request.Itin, string.Empty);
 
             if (!_academicStudentService.IsBrazilianItinValid(onlyNumbersItin))
-                _notificationContext.BadRequest(nameof(Messages.Messages.CpfIsNotValid), 
-                    string.Format(Messages.Messages.CpfIsNotValid, request.Itin));
+                _notificationContext.BadRequest(nameof(Messages.CpfIsNotValid), 
+                    string.Format(Messages.CpfIsNotValid, request.Itin));
+            
+            if (request.Mail == "")
+                _notificationContext.BadRequest(nameof(Messages.MailIsMandatory), Messages.MailIsMandatory);
+            else
+            {
+                Regex mailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match match = mailRegex.Match(request.Mail);
+                if (!match.Success)
+                    _notificationContext.BadRequest(nameof(Messages.MailIsNotValid),
+                        string.Format(Messages.MailIsNotValid, request.Mail));
+            }
         }
     }
 }

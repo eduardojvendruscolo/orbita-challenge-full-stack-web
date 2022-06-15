@@ -5,6 +5,7 @@ using AutoMapper;
 using GrupoA.Education.Student.Application.AcademicStudent.Command;
 using GrupoA.Education.Student.Application.AcademicStudent.generic;
 using GrupoA.Education.Student.Application.AcademicStudent.ViewModels;
+using GrupoA.Education.Student.Application.Resources;
 using GrupoA.Education.Student.Common.Interfaces;
 using GrupoA.Education.Student.Domain.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Uow;
@@ -32,8 +33,8 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             var student = await _uow.Students.GetById(request.PrimaryKey);
             if (student == null)
             {
-                _notificationContext.NotFound(nameof(Messages.Messages.StudentNotFound), 
-                    string.Format(Messages.Messages.StudentNotFound, request.PrimaryKey.ToString()));
+                _notificationContext.NotFound(nameof(Messages.StudentNotFound), 
+                    string.Format(Messages.StudentNotFound, request.PrimaryKey.ToString()));
                 return new CommandResult<AcademicStudentViewModel>();
             }
 
@@ -46,8 +47,8 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             if (await _uow.Commit())
                 return new CommandResult<AcademicStudentViewModel>(true, _mapper.Map<AcademicStudentViewModel>(student));
 
-            _notificationContext.BadRequest(nameof(Messages.Messages.ErrorOnUpdate), 
-                string.Format(Messages.Messages.ErrorOnUpdate, "student", request.PrimaryKey.ToString()));
+            _notificationContext.BadRequest(nameof(Messages.ErrorOnUpdate), 
+                string.Format(Messages.ErrorOnUpdate, "student", request.PrimaryKey.ToString()));
             
             return new CommandResult<AcademicStudentViewModel>();            
         }
@@ -60,8 +61,8 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             var onlyNumbersItin = onlyNumbersRegex.Replace(request.Itin, string.Empty);
 
             if (!_academicStudentService.IsBrazilianItinValid(onlyNumbersItin))
-                _notificationContext.BadRequest(nameof(Messages.Messages.CpfIsNotValid), 
-                    string.Format(Messages.Messages.CpfIsNotValid, request.Itin));            
+                _notificationContext.BadRequest(nameof(Messages.CpfIsNotValid), 
+                    string.Format(Messages.CpfIsNotValid, request.Itin));            
         }
 
         private void UpdateStudentInformations(Domain.Student.Entities.Student student, UpdateAcademicStudentCommand request)
