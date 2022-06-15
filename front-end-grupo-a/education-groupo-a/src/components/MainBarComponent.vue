@@ -1,8 +1,16 @@
 <template>
     <v-container fluid>
+
         <v-toolbar flat>
             <v-toolbar-title>Students</v-toolbar-title>
         </v-toolbar>
+
+        <v-text-field 
+            label="Type your search"
+            outlined
+            v-model="searchString"
+            @keyup="getStudents(1)"
+        ></v-text-field>
 
         <v-simple-table>
             <template v-slot:default>
@@ -102,7 +110,8 @@ export default {
             studentName: "",
             studentPrimaryKey: null,
             totalPages: null,
-            page: null
+            page: null,
+            searchString: null
         }
     },
     methods: {
@@ -124,7 +133,12 @@ export default {
             this.getStudents(page);
         },
         getStudents(page){
-            axios.get('https://localhost:30931/api/v1/students?pageSize=10&pageOffset='+page)
+            var url = 'https://localhost:30931/api/v1/students?pageSize=10&pageOffset='+page;
+
+            if (this.searchString)
+                url += '&filter='+this.searchString
+
+            axios.get(url)
                     .then((res) => {
                             this.students = res.data.records;
                             this.totalPages = res.data.totalPages;
