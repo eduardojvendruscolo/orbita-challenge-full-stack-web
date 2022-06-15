@@ -12,7 +12,11 @@ Utilizado o Swagger como documentação da API, para auxílio no processode dese
 
 Utilizado o Postman para fazer requisições Rest no backend, pois ele oferece diversas opções para automação de requisições também geração de massa de dados para testes, e variáveis padrões dele para ajuda nos cadastros.
 
-![Postman](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/postmanEducation.png)
+![Postman](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/postman_tests.gif)
+
+Em relação aos testes, também foi feito testes utilizando o Postman, pois o Postman também oferece o recurso de testes, com os dados retornados também conferindo o status da requisição HTTP, os testes neste caso foi feito de forma sequencial, inserindo um aluno, buscando, fazendo update e por fim remover.
+
+![Teste](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/postmanEducation.png)
 
 **Lista de bibliotecas de terceiros utilizadas**
 
