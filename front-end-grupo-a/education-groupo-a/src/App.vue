@@ -1,11 +1,11 @@
 <template>
     <v-app >
-      <v-toolbar elevation="5" max-height="80px" style="padding: 8px" color="rgb(230, 230, 230)">
+      <v-toolbar elevation="5" max-height="80px" style="padding: 10px 20px;margin-bottom: 30px" color="rgb(230, 230, 230)">
         <v-app-bar-nav-icon> 
           <v-img src="https://maisaedu.com.br/hubfs/site-grupo-a/logo-mais-a-educacao.svg" 
                  width="60px" transition="fade-transition"></v-img> 
         </v-app-bar-nav-icon> 
-        <v-toolbar-title>Grupo A Educação</v-toolbar-title>
+        <v-toolbar-title>+A Educação</v-toolbar-title>
       </v-toolbar> 
       <v-main>
         <router-view/>

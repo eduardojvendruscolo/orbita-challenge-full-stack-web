@@ -1,9 +1,7 @@
 <template>
     <v-container fluid>
 
-        <v-toolbar flat>
-            <v-toolbar-title>Students</v-toolbar-title>
-        </v-toolbar>
+        <h4>Students</h4>
 
         <v-row>
             <v-col md="11">
@@ -85,12 +83,13 @@
         ></v-pagination>
 
         <router-link :to="{name: 'Insert', params: {}}" style="text-decoration: none; color: inherit;">
-              <v-btn
-                    class="mx-2"
+              <v-btn 
+                    class="plusButton"
                     fab
                     dark
+                    large
                     color="indigo">
-            <v-icon dark> mdi-plus</v-icon>
+                <v-icon dark> mdi-plus</v-icon>
              </v-btn>  
         </router-link>
 
@@ -212,7 +211,6 @@ export default {
                 default:
                     this.fieldOrderType === "asc" ? this.tableHeaderIconItin = arrowDownIcon : this.tableHeaderIconItin = arrowUpIcon;
                     break;                     
-
             }
 
             this.fieldOrderName = fieldOrderName;
@@ -221,3 +219,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .plusButton {
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 3em; 
+        margin-left: 94%;       
+    }
+</style>
