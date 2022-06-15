@@ -32,7 +32,7 @@ export default {
     },
     data() {
         return {
-            ra: "",
+            ra: 0,
             name: "",
             mail: "",
             itin: "",
@@ -52,8 +52,14 @@ export default {
                 this.edited = "User Inserted Successfully";
                 setTimeout(() =>{this.$router.push({name: "home"})}, 1000);
             }).catch(err => {
-                let errorMessage = err.response.data.exceptions[0].message;
-                this.error = `Error: ${errorMessage}`;
+
+                var errorMessage = "";
+
+                err.response.data.exceptions.forEach(element => {
+                    errorMessage += element.message + ", ";
+                });     
+
+                this.error = `Error: ${errorMessage.substring(0, errorMessage.length-2)}`;
             })
         }
     }
