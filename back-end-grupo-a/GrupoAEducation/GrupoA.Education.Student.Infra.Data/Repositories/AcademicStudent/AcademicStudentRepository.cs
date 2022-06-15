@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using GrupoA.Education.Student.Domain.Student.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Context;
@@ -18,12 +20,11 @@ namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
             var studentGetAllQuery = _context.Students.AsNoTracking();
             
             if (!string.IsNullOrEmpty(filter))
-            {
-                studentGetAllQuery = studentGetAllQuery.Where(student => student.Name.ToLower().Contains(filter.ToLower()));
-                studentGetAllQuery = studentGetAllQuery.Where(student => student.Itin.ToLower().Contains(filter.ToLower()));
-                studentGetAllQuery = studentGetAllQuery.Where(student => student.Mail.ToLower().Contains(filter.ToLower()));
-                studentGetAllQuery = studentGetAllQuery.Where(student => student.Ra.ToString().Contains(filter.ToLower()));
-            }
+                studentGetAllQuery = studentGetAllQuery.Where(
+                    student => student.Name.ToLower().Contains(filter.ToLower())
+                    || student.Itin.ToLower().Contains(filter.ToLower())
+                    || student.Mail.ToLower().Contains(filter.ToLower())
+                    || student.Ra.ToString().Contains(filter.ToLower()));
             
             if (!string.IsNullOrEmpty(orderByField))
             {
