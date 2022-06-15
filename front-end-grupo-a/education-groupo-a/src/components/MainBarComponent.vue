@@ -5,20 +5,26 @@
             <v-toolbar-title>Students</v-toolbar-title>
         </v-toolbar>
 
-        <v-text-field 
-            label="Type your search"
-            outlined
-            v-model="searchString"
-            @keyup="getStudents(1)"
-        ></v-text-field>
-
-        <v-select
-            :items="items"
-            label="Page size"
-            solo
-            v-model="pageSize"
-            @change="getStudents(1)"
-        ></v-select>
+        <v-row>
+            <v-col md="11">
+                <v-text-field 
+                    label="Type your search"
+                    outlined
+                    v-model="searchString"
+                    @keyup="getStudents(1)"
+                ></v-text-field>
+            
+            </v-col>
+            <v-col md="1">
+                <v-select
+                    :items="items"
+                    label="Page size"
+                    v-model="pageSize"
+                    outlined
+                    @change="getStudents(1)"
+                ></v-select>
+            </v-col>  
+        </v-row>        
 
         <v-simple-table>
             <template v-slot:default>
@@ -126,7 +132,7 @@ export default {
             tableHeaderIconName: 'mdi-arrow-down-bold',
             tableHeaderIconMail: '',
             tableHeaderIconItin: '',
-            items: [10, 20, 30, 50, 100],
+            items: [5, 10, 20, 50, 100],
             pageSize: 10
         }
     },
