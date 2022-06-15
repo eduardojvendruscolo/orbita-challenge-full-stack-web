@@ -16,10 +16,10 @@
             <template v-slot:default>
                 <thead>
                     <tr >
-                        <th class="text-left">RA</th>
-                        <th class="text-left">Name</th>
-                        <th class="text-left">Mail</th>
-                        <th class="text-left">Itin</th>
+                        <th class="text-left" @click="sortField('ra')"> <v-icon> {{tableHeaderIconRa}} </v-icon>RA</th>
+                        <th class="text-left" @click="sortField('name')"><v-icon> {{tableHeaderIconName}} </v-icon>Name</th>
+                        <th class="text-left" @click="sortField('mail')"><v-icon> {{tableHeaderIconMail}} </v-icon>Mail</th>
+                        <th class="text-left" @click="sortField('itin')"><v-icon> {{tableHeaderIconItin}} </v-icon>Itin</th>
                         <th class="text-left">Actions</th>
                     </tr>
                 </thead>
@@ -111,7 +111,13 @@ export default {
             studentPrimaryKey: null,
             totalPages: null,
             page: null,
-            searchString: null
+            searchString: null,
+            fieldOrderName: null,
+            fieldOrderType: "asc",
+            tableHeaderIconRa: '',
+            tableHeaderIconName: 'mdi-arrow-down-bold',
+            tableHeaderIconMail: '',
+            tableHeaderIconItin: ''
         }
     },
     methods: {
@@ -138,6 +144,12 @@ export default {
             if (this.searchString)
                 url += '&filter='+this.searchString
 
+            if (this.fieldOrderName)
+                url += '&orderByField='+this.fieldOrderName   
+                
+            if (this.fieldOrderName && this.fieldOrderType)
+                url += '&orderType='+this.fieldOrderType      
+
             axios.get(url)
                     .then((res) => {
                             this.students = res.data.records;
@@ -147,6 +159,45 @@ export default {
                     .catch((error) => {
                             console.log(error);
                     });
+        },
+        sortField(fieldOrderName) {
+
+            if (fieldOrderName === this.fieldOrderName){
+                if (this.fieldOrderType === "asc")
+                   this.fieldOrderType = "desc"
+                else    
+                   this.fieldOrderType = "asc"
+            }
+
+            this.tableHeaderIconRa = ''
+            this.tableHeaderIconName = ''
+            this.tableHeaderIconMail = ''
+            this.tableHeaderIconItin = ''
+
+            let arrowDownIcon = 'mdi-arrow-down-bold';
+            let arrowUpIcon = 'mdi-arrow-up-bold';
+
+            switch (fieldOrderName) {
+                case "ra":
+                    this.fieldOrderType === "asc" ? this.tableHeaderIconRa = arrowDownIcon : this.tableHeaderIconRa = arrowUpIcon;
+                    break;
+
+                case "name":
+                    this.fieldOrderType === "asc" ? this.tableHeaderIconName = arrowDownIcon : this.tableHeaderIconName = arrowUpIcon;
+                    break;      
+                    
+                case "mail":
+                    this.fieldOrderType === "asc" ? this.tableHeaderIconMail = arrowDownIcon : this.tableHeaderIconMail = arrowUpIcon;
+                    break;    
+                    
+                default:
+                    this.fieldOrderType === "asc" ? this.tableHeaderIconItin = arrowDownIcon : this.tableHeaderIconItin = arrowUpIcon;
+                    break;                     
+
+            }
+
+            this.fieldOrderName = fieldOrderName;
+            this.getStudents(1);
         }
     }
 }
