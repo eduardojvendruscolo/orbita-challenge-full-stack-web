@@ -72,7 +72,7 @@ namespace GrupoA.Education.Student.Api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]        
         [HttpPost]
         public async Task<ActionResult<AcademicStudentViewModel>> InsertStudent([FromBody] InsertAcademicStudentCommand insertAcademicStudentCommand)
-            => Ok(await mediator.Send(insertAcademicStudentCommand));
+            => Created(nameof(InsertStudent), await mediator.Send(insertAcademicStudentCommand));
         
         /// <summary>
         /// Update a new studend
