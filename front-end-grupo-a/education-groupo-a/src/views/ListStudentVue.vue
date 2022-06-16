@@ -198,8 +198,8 @@ export default {
             this.tableHeaderIconMail = ''
             this.tableHeaderIconItin = ''
 
-            let arrowDownIcon = 'mdi-chevron-up';
-            let arrowUpIcon = 'mdi-chevron-down';
+            let arrowDownIcon = 'mdi-chevron-down';
+            let arrowUpIcon = 'mdi-chevron-up';
 
             switch (fieldOrderName) {
                 case "ra":
