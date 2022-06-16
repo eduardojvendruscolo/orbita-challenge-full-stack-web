@@ -13,7 +13,7 @@
             </v-toolbar>
 
             <v-text-field v-model="ra" label="RA" disabled hint='12334554' ></v-text-field>
-            <v-text-field v-model="name" label="Student Name" clearable :rules="[validateName]" ></v-text-field>
+            <v-text-field v-model="name" label="Student Name" clearable :rules="[validateName]"></v-text-field>
             <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com" :rules="[validateMail]"></v-text-field>
             <v-text-field v-model="itin" label="Student Itin" hint="000.000.000-00" :rules="[validateItin]"></v-text-field><br>
             <v-btn color='primary' small @click="update" style="text-decoration: none;" elevation="0">Save</v-btn> 

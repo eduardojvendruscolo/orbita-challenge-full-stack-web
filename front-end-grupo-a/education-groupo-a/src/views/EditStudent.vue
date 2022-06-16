@@ -11,8 +11,8 @@
                 <v-toolbar-title>Student RA {{ra}} edit</v-toolbar-title>
             </v-toolbar>
             <v-text-field v-model="ra" label="RA" disabled hint='12334554' ></v-text-field>
-            <v-text-field v-model="name" label="Student Name" clearable ></v-text-field>
-            <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com" ></v-text-field>
+            <v-text-field v-model="name" label="Student Name" clearable :rules="[validateName]"></v-text-field>
+            <v-text-field v-model="mail" label="Student Mail" clearable hint="email@gmail/hotmail/outlook.com" :rules="[validateMail]"></v-text-field>
             <v-text-field v-model="itin" label="Student Itin" disabled hint="000.000.000-00"></v-text-field><br>
             <v-btn color='primary' small @click="update" elevation="0">edit</v-btn> 
             <router-link :to="{name: 'home'}" style="text-decoration: none;margin-left: 10px">
@@ -64,6 +64,21 @@ export default {
                 var errorMessage = err.response.data.exceptions.reduce((msg, item) => msg += item.message + ', ', '');
                 this.error = `Error: ${errorMessage.substring(0, errorMessage.length-2)}`;
             })
+        },
+        validateName() {
+            if (this.name.length <= 1)
+                return 'The name must be grather than 1 caracter';
+            
+            return true;        
+        },
+        validateMail(){
+            var mailRegexValidation = /\S+@\S+\.\S+/;
+            var mailValidateResult = mailRegexValidation.test(this.mail);
+
+            if (!mailValidateResult)
+                return `Mail ${this.mail} is not valid`;
+
+            return mailValidateResult;
         }
     }
 }
