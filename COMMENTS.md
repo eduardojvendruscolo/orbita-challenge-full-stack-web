@@ -31,7 +31,6 @@ Em relação aos testes, também foi feito testes utilizando o Postman, pois o P
 - Encontrar uma maneira de deixar de forma genérica o campo de ordenação no order by em AcademicStudentRepository.cs, e no caso de uma melhoria de performance extrema seja necessária avaliar o custo da requisição SQL e avaliar a criação de indiçes no banco de dados e otimização de consulta SQL.
 - Em AcademicStudentService existem os métodos AcademicStudenAlreadyExists e AnotherStudenAlreadyExists, melhorar fazendo um predicado dinamico, para poder usar só uma função ao invés de duas, pois a única coisa que muda é o parametro da primary key.
 - Criar componentes no front-end para listagem e paginação for genérica.
-- Centralizar validações comuns no back-end em um service específico.
 - As URLs de chamada de API no front-end, colocar em outro local ao invés do local da chamada do Axios.
 - Validação no nome da pessoa, limitar tamanho e não deixar inserir caracteres especiais, e talvez obrigar informar nome e sobrenome.
 
