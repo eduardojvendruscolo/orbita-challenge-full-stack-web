@@ -80,16 +80,7 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.CommandHandlers
             else if (request.Name.Length <= 1)
                 _notificationContext.BadRequest(nameof(Messages.StudentNameIsTooShort), string.Format(Messages.StudentNameIsTooShort, request.Name));            
             
-            if (request.Mail == "")
-                _notificationContext.BadRequest(nameof(Messages.MailIsMandatory), Messages.MailIsMandatory);
-            else
-            {
-                Regex mailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                Match match = mailRegex.Match(request.Mail);
-                if (!match.Success)
-                    _notificationContext.BadRequest(nameof(Messages.MailIsNotValid),
-                        string.Format(Messages.MailIsNotValid, request.Mail));
-            }          
+            _academicStudentService.ValidateMail(request.Mail);         
             
             _uow.Students.Update(student);
         }

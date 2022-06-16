@@ -8,5 +8,6 @@ namespace GrupoA.Education.Student.Domain.Interfaces
         Task AcademicStudenAlreadyExists(int ra, string itin, string mail);
         Task AnotherStudenAlreadyExists(int ra, string itin, string mail, Guid primaryKey);
         bool IsBrazilianItinValid(string Itin);
+        void ValidateMail(string mail);
     }
 }

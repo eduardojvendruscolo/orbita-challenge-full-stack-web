@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using GrupoA.Education.Student.Application.Resources;
 using GrupoA.Education.Student.Common.Interfaces;
@@ -100,6 +101,19 @@ namespace GrupoA.Education.Student.Application.AcademicStudent.Services
                 resto = 11 - resto;
             digito = digito + resto.ToString();
             return Itin.EndsWith(digito);
-        }        
+        }
+        public void ValidateMail(string mail)
+        {
+            if (mail == "")
+                _notificationContext.BadRequest(nameof(Messages.MailIsMandatory), Messages.MailIsMandatory);
+            else
+            {
+                Regex mailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match match = mailRegex.Match(mail);
+                if (!match.Success)
+                    _notificationContext.BadRequest(nameof(Messages.MailIsNotValid),
+                        string.Format(Messages.MailIsNotValid, mail));
+            }  
+        }
     }
 }
