@@ -61,8 +61,8 @@ export default {
                 this.edited = "User Edited Successfully";
                 setTimeout(() =>{this.$router.push({name: "home"})}, 1000);
             }).catch(err => {
-                let errMsg = err.response.data;
-                this.error = `Error: ${errMsg}`;
+                var errorMessage = err.response.data.exceptions.reduce((msg, item) => msg += item.message + ', ', '');
+                this.error = `Error: ${errorMessage.substring(0, errorMessage.length-2)}`;
             })
         }
     }

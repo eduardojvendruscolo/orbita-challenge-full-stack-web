@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import MainBarComponent from '../components/MainBarComponent.vue'
+import MainBarComponent from '../views/ListStudentVue.vue'
 import EditStudentView from '../views/EditStudent.vue'
 import InsertStudentView from '../views/InsertStudent.vue'
-
-console.log('MainBarComponent', MainBarComponent)
 
 Vue.use(VueRouter)
 

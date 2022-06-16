@@ -54,13 +54,7 @@ export default {
                 this.edited = "User Inserted Successfully";
                 setTimeout(() =>{this.$router.push({name: "home"})}, 1000);
             }).catch(err => {
-
-                var errorMessage = "";
-
-                err.response.data.exceptions.forEach(element => {
-                    errorMessage += element.message + ", ";
-                });     
-
+                var errorMessage = err.response.data.exceptions.reduce((msg, item) => msg += item.message + ', ', '');
                 this.error = `Error: ${errorMessage.substring(0, errorMessage.length-2)}`;
             })
         },
