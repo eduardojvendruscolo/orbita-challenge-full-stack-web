@@ -45,6 +45,8 @@ namespace GrupoA.Education.Student.Infra.Data.Migrations.PgSql.Education
                     b.HasIndex("Ra")
                         .IsUnique();
 
+                    b.HasIndex("Itin", "Mail", "Name", "Ra");
+
                     b.ToTable("Student");
                 });
 #pragma warning restore 612, 618

@@ -38,7 +38,9 @@ namespace GrupoA.Education.Student.Infra.Data.Mappings.Students
 
             builder
                 .HasIndex(x => x.Ra)
-                .IsUnique();            
+                .IsUnique();
+
+            builder.HasIndex(x => new {x.Itin, x.Mail, x.Name, x.Ra });
         }
     }
 }
