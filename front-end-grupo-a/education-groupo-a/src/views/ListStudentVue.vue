@@ -84,6 +84,7 @@
             v-model="page"
             @input="nextPage"   
             circle      
+            total-visible="25"
             style="margin-top: 30px"           
         ></v-pagination>
 
