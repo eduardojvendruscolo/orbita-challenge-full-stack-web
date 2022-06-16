@@ -1,5 +1,11 @@
 <template>
     <v-container fluid>
+        <div v-if="deleted != undefined">
+            <v-alert dense type="success">{{deleted}}</v-alert>
+        </div>
+        <div v-if="error != undefined">
+            <v-alert dense type="error">{{error}}</v-alert>
+        </div>
 
         <v-toolbar flat class="toolbar-list">
             <v-toolbar-title>Students</v-toolbar-title>
@@ -139,7 +145,9 @@ export default {
             tableHeaderIconMail: '',
             tableHeaderIconItin: '',
             items: [5, 10, 20, 50, 100],
-            pageSize: 10
+            pageSize: 10,
+            error: undefined,
+            deleted: undefined,            
         }
     },
     methods: {
@@ -147,9 +155,12 @@ export default {
             axios.delete('https://localhost:30931/api/v1/students/' + this.studentPrimaryKey).then(res => {
                 console.log(res);
                 this.students = this.students.filter(s => s.primaryKey != this.studentPrimaryKey);
+                this.deleted = `The student ${this.studentName} has been deleted!`;
                 this.dialog = false;
+                setTimeout(() =>{this.deleted = undefined}, 2500);
             }).catch(err => {
-                console.log(err);
+                var errorMessage = err.response.data.exceptions.reduce((msg, item) => msg += item.message + ', ', '');
+                this.error = `Error: ${errorMessage.substring(0, errorMessage.length-2)}`;
             })
         },
         saveRA(ra, name, primaryKey) {
@@ -177,12 +188,12 @@ export default {
 
             axios.get(url)
                     .then((res) => {
-                            this.students = res.data.records;
-                            this.totalPages = res.data.totalPages;
-                            this.page = res.data.page;
+                        this.students = res.data.records;
+                        this.totalPages = res.data.totalPages;
+                        this.page = res.data.page;
                     })
                     .catch((error) => {
-                            console.log(error);
+                        this.error = `Error: ${error}`;
                     });
         },
         sortField(fieldOrderName) {
