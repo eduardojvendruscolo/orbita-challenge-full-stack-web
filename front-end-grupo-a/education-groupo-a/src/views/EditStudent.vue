@@ -24,6 +24,7 @@
 
 <script>
 import axios from 'axios';
+import common from '../common/commonFunctions'
 
 export default {
     name: 'EditStudentView',
@@ -66,19 +67,10 @@ export default {
             })
         },
         validateName() {
-            if (this.name.length <= 1)
-                return 'The name must be grather than 1 caracter';
-            
-            return true;        
+            return common.validations.validateName(this.name);      
         },
         validateMail(){
-            var mailRegexValidation = /\S+@\S+\.\S+/;
-            var mailValidateResult = mailRegexValidation.test(this.mail);
-
-            if (!mailValidateResult)
-                return `Mail ${this.mail} is not valid`;
-
-            return mailValidateResult;
+            return common.validations.validateMail(this.mail);
         }
     }
 }

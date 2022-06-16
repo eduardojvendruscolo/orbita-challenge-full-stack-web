@@ -26,6 +26,7 @@
 
 <script>
 import axios from 'axios';
+import common from '../common/commonFunctions'
 
 export default {
     name: 'InsertStudentView',
@@ -59,46 +60,13 @@ export default {
             })
         },
         validateName() {
-            if (this.name.length <= 1)
-                return 'The name must be grather than 1 caracter';
-            
-            return true;        
+            return common.validations.validateName(this.name);      
         },
         validateItin() {
-            if (this.itin) {
-                var cpfValidationResult = this.validateCpf(this.itin);
-                
-                if (!cpfValidationResult)
-                    return `CPF ${this.itin} inválido`;
-                else     
-                    return true;
-            }
-
-            return true;
-        },
-        validateCpf(cpf) {
-            cpf = cpf.replace(/\D/g, '');
-            if(cpf.toString().length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-            var result = true;
-            [9,10].forEach(function(j){
-                var soma = 0, r;
-                cpf.split(/(?=)/).splice(0,j).forEach(function(e, i){
-                    soma += parseInt(e) * ((j+2)-(i+1));
-                });
-                r = soma % 11;
-                r = (r <2)?0:11-r;
-                if(r != cpf.substring(j, j+1)) result = false;
-            });
-            return result;
+            return common.validations.validateCpf(this.itin);
         },
         validateMail(){
-            var mailRegexValidation = /\S+@\S+\.\S+/;
-            var mailValidateResult = mailRegexValidation.test(this.mail);
-
-            if (!mailValidateResult)
-                return `Mail ${this.mail} is not valid`;
-
-            return mailValidateResult;
+            return common.validations.validateMail(this.mail);
         }
     }
 }
