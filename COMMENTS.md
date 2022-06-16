@@ -6,7 +6,7 @@ Projeto desenvolvido utilizando as tecnologias solicitadas netCore, C# e Entity 
 
 Caso necesário, para uma alta cargad e requisição e leituras, um ElasticSearch ou MongoDb para o banco de leitura, também como seria feito o deploy deste projeto, com container Docker com disponibilidade 24/7 e zero de downtime em caso de uma atualização, para este caso, talvez utilizar Kubernetes em EKS ou Amazon ECS.
 
-Utilizado o Swagger como documentação da API, para auxílio no processode desenvolvimento, teste e talvez ajuda em uma abordadem de desenvolvimento não full stack.
+Utilizado o Swagger como documentação da API, para auxílio no processo de desenvolvimento, teste e talvez ajuda em uma abordadem de desenvolvimento não full stack.
 
 ![Swagger](https://github.com/eduardojvendruscolo/orbita-challenge-full-stack-web/blob/master/images/swaggerEducationExample.png)
 
@@ -30,6 +30,10 @@ Em relação aos testes, também foi feito testes utilizando o Postman, pois o P
 - Colocar order by type em um Enum no caso de ASC e DESC
 - Encontrar uma maneira de deixar de forma genérica o campo de ordenação no order by em AcademicStudentRepository.cs, e no caso de uma melhoria de performance extrema seja necessária avaliar o custo da requisição SQL e avaliar a criação de indiçes no banco de dados e otimização de consulta SQL.
 - Em AcademicStudentService existem os métodos AcademicStudenAlreadyExists e AnotherStudenAlreadyExists, melhorar fazendo um predicado dinamico, para poder usar só uma função ao invés de duas, pois a única coisa que muda é o parametro da primary key.
+- Criar componentes no front-end para listagem e paginação for genérica.
+- Centralizar validações comuns no back-end em um service específico.
+- As URLs de chamada de API no front-end, colocar em outro local ao invés do local da chamada do Axios.
+- Validação no nome da pessoa, limitar tamanho e não deixar inserir caracteres especiais, e talvez obrigar informar nome e sobrenome.
 
 **Quais requisitos obrigatórios que não foram entregues**
-- Teste unitários
+- Teste unitários não foram feitos, porém foi feito teste na camada da API com Postman.
