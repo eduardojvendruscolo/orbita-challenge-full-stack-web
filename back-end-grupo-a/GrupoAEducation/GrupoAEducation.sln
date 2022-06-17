@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoAEducation", "GrupoAEducation\GrupoAEducation.csproj", "{FEC444A4-E512-4EAD-BD22-C6C31552A772}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoA.Education.Student.Common", "GrupoA.Education.Student.Common\GrupoA.Education.Student.Common.csproj", "{409C545C-F75F-461A-8118-27932CA05586}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoA.Education.Student.Application", "GrupoA.Education.Student.Application\GrupoA.Education.Student.Application.csproj", "{3EF31A85-5109-4A35-99A6-7084D8346D46}"
@@ -24,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FEC444A4-E512-4EAD-BD22-C6C31552A772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FEC444A4-E512-4EAD-BD22-C6C31552A772}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FEC444A4-E512-4EAD-BD22-C6C31552A772}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEC444A4-E512-4EAD-BD22-C6C31552A772}.Release|Any CPU.Build.0 = Release|Any CPU
 		{409C545C-F75F-461A-8118-27932CA05586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{409C545C-F75F-461A-8118-27932CA05586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{409C545C-F75F-461A-8118-27932CA05586}.Release|Any CPU.ActiveCfg = Release|Any CPU
