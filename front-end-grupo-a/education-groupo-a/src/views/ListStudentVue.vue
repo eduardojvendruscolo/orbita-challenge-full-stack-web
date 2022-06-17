@@ -242,8 +242,8 @@ export default {
     .plusButton {
         position: fixed;
         bottom: 0;
-        margin-bottom: 3em; 
-        margin-left: 92.5%;       
+        margin: 2.5em; 
+        right: 0;
     }
 
     .plusButton:hover {
