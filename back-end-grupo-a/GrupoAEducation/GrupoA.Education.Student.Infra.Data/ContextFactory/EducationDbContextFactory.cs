@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
 using GrupoA.Education.Student.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 
 namespace GrupoA.Education.Student.Infra.Data.ContextFactory
 {
