@@ -10,8 +10,6 @@ namespace GrupoA.Education.Student.Infra.Data.ContextFactory
 {
     public class EducationDbContextFactory : IDesignTimeDbContextFactory<EducationDbContext>
     {
-        private readonly IConfiguration _configuration;
-
         public EducationDbContext CreateDbContext(string[] args)
         {
             var config = new ConfigurationBuilder().Build();
