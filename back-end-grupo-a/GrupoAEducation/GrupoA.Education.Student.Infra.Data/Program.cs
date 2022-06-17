@@ -6,7 +6,6 @@ namespace GrupoA.Education.Student.Infra.Data
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
