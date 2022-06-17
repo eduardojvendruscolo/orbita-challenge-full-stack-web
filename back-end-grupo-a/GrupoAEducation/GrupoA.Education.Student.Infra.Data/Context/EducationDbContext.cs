@@ -30,7 +30,6 @@ namespace GrupoA.Education.Student.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.AddSequences();
             builder.AddMappings();
         }        
         
