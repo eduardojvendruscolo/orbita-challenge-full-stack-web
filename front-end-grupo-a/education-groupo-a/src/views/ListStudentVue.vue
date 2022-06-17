@@ -48,7 +48,7 @@
                         <td>{{student.ra}}</td>
                         <td>{{student.name}}</td>
                         <td>{{student.mail}}</td>
-                        <td> <the-mask :mask="['###.###.###-##']" :value="student.itin"></the-mask> </td>
+                        <td> <the-mask :mask="['###.###.###-##']" :value="student.itin" disabled></the-mask> </td>
                         <td>
                             <router-link :to="{name: 'Edit', params: {id: student.primaryKey}}" 
                                           style="text-decoration: none; color: inherit;margin-right: 15px">
