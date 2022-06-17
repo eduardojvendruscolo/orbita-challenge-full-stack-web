@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GrupoA.Education.Student.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
@@ -9,15 +10,10 @@ namespace GrupoA.Education.Student.Infra.Data.ContextFactory
 {
     public class EducationDbContextFactory : IDesignTimeDbContextFactory<EducationDbContext>
     {
+        private readonly IConfiguration _configuration;
+
         public EducationDbContext CreateDbContext(string[] args)
         {
-            var host = new HostBuilderContext(new Dictionary<object, object>()
-            {
-                {
-                    "ASPNETCORE_ENVIRONMENT", "Development"
-                }
-            });
-            
             var config = new ConfigurationBuilder().Build();
             var optionsBuilder = new DbContextOptionsBuilder<EducationDbContext>();
             optionsBuilder.UseNpgsql("Host=pgsql.local;Port=15432;Pooling=true;Database=DB_EDUCATION_STUDENT;User Id=grupoa;Password=0b979a178905;",
