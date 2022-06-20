@@ -35,7 +35,7 @@ export default {
     },
     data() {
         return {
-            ra: 0,
+            ra: undefined,
             name: "",
             mail: "",
             itin: "",
@@ -46,7 +46,7 @@ export default {
     methods: {
         update() {
             axios.post("https://localhost:30931/api/v1/students/",{
-                ra: Number(this.ra),
+                ra: Number(this.ra === undefined ? 0 : this.ra),
                 name: this.name,
                 mail: this.mail,
                 itin: this.itin
