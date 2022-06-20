@@ -9,9 +9,15 @@ namespace GrupoA.Education.Student.Infra.Data.ContextFactory
     {
         public EducationDbContext CreateDbContext(string[] args)
         {
-            var config = new ConfigurationBuilder().Build();
+            IConfigurationRoot config = new ConfigurationBuilder()
+                .SetBasePath(System.IO.Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var educationDatabaseAddress = config.GetConnectionString("EducationDatabaseAddress");
+            
             var optionsBuilder = new DbContextOptionsBuilder<EducationDbContext>();
-            optionsBuilder.UseNpgsql("Host=pgsql.local;Port=15432;Pooling=true;Database=DB_EDUCATION_STUDENT;User Id=grupoa;Password=0b979a178905;",
+            optionsBuilder.UseNpgsql(educationDatabaseAddress,
                 builder =>
                 {
                     builder.MigrationsAssembly("GrupoA.Education.Student.Infra.Data");
