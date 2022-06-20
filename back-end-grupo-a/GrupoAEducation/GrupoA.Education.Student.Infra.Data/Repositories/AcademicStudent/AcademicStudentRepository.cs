@@ -1,7 +1,4 @@
-using System;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
 using GrupoA.Education.Student.Domain.Student.Interfaces;
 using GrupoA.Education.Student.Infra.Data.Context;
 using GrupoA.Education.Student.Infra.Data.Repositories.Generic;
@@ -15,7 +12,7 @@ namespace GrupoA.Education.Student.Infra.Data.Repositories.AcademicStudent
         {
         }
 
-        public IQueryable<Domain.Student.Entities.Student> GetAll(string filter, string orderByField, string orderType = "asc")
+        public IQueryable<Domain.Student.Entities.Student> GetAll(string filter, string orderByField, string orderType)
         {
             var studentGetAllQuery = _context.Students.AsNoTracking();
             
